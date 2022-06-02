@@ -3,7 +3,7 @@ import "cypress-iframe";
 class Homepage {
 
     getHomePage = () => {
-        cy.visit("https://qa.knights.app")
+        cy.visit("https://qa.app.nami.gg/games")
 
     }
 }

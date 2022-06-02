@@ -1,4 +1,4 @@
-import HomePage from "../pageObjects/loginPage";
+import HomePage from "../pageObjects/homePage";
 
 
 describe('User login tests', () => {

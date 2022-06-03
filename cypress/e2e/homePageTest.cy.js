@@ -1,5 +1,7 @@
 import HomePage from "../pageObjects/homePage";
 import "cypress-localstorage-commands";
+// import './commands'
+// import 'cypress-extensions'
 
 
 describe('User login tests', () => {
@@ -9,12 +11,13 @@ describe('User login tests', () => {
     let testData;
 
 
+
+
     beforeEach(() => {
       cy.fixture('login').then(dataJson => {
         testData = dataJson;
       });
       cy.setLocalStorage("isLyceumAuthenticated", true);
-
     });
 
 
@@ -25,7 +28,7 @@ describe('User login tests', () => {
     it('UI Test 1.2 - Nami logo on top left of the page', () => {
         homePage.checkNamiLogo();
     })
-    
+
     it('UI Test 1.3 - Connect wallet button is visible', () => {
         homePage.checkConnectWalletButton();
     });

@@ -1,5 +1,7 @@
 import "cypress-iframe";
 import "cypress-xpath";
+// import './commands'
+// import 'cypress-extensions'
 
 
 class Homepage {

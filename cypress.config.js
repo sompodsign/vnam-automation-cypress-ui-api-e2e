@@ -21,8 +21,7 @@ module.exports = defineConfig({
   requestTimeout: 10000,
   responseTimeout: 30000,
   e2e: {
-    // We've imported your old cypress plugins here.
-    // You may want to clean this up later by importing these.
+    baseUrl: 'https://dev.api.nami.gg',
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },

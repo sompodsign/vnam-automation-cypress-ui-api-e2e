@@ -1,6 +1,6 @@
 import HomePage from "../pageObjects/homePage";
 import "cypress-localstorage-commands";
-import {setToken} from "../fixtures/helpers";
+import {setCustomLocalStorage, setToken} from "../fixtures/helpers";
 
 
 describe('User login tests', () => {
@@ -13,13 +13,13 @@ describe('User login tests', () => {
       cy.fixture('login').then(dataJson => {
         testData = dataJson;
       });
-      cy.setLocalStorage("isLyceumAuthenticated", true);
+      setCustomLocalStorage("isLyceumAuthenticated", true);
     });
 
 
 
     it('UI Test 1.1 - User visits homepage', () => {
-            homePage.getHomePage(testData.passPhrase);
+            HomePage.getHomePage(testData.passPhrase);
     })
 
     it('UI Test 1.2 - Nami logo on top left of the page', () => {

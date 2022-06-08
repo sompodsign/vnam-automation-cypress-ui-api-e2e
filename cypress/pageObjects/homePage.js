@@ -1,20 +1,10 @@
 import "cypress-iframe";
 import "cypress-xpath";
 import "cypress-localstorage-commands";
-import {getToken, setCustomLocalStorage} from "../fixtures/helpers";
-
 
 class Homepage {
 
-
-    // getHomePage = (phrase) => {
-    //     cy.visit("https://qa.app.nami.gg/games", {
-    //         onBeforeLoad: (win) => {
-    //             cy.stub(win, 'prompt').returns(phrase);
-    //         }
-    //     });
-    // }
-    getHomePage = (phrase) => {
+    static getHomePage = (phrase) => {
         cy.visit("https://qa.app.nami.gg/games");
         return this;
     }

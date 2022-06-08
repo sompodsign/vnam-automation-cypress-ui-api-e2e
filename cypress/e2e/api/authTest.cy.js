@@ -1,6 +1,6 @@
 describe("User login tests", () => {
 
-        it("UI Test 1.1 - base api check", () => {
+        it("UI Test 1.1 - '/' base api check", () => {
                 cy.request('/').its('headers')
                     .its('content-type')
                     .should('include', 'text/html')
@@ -8,7 +8,7 @@ describe("User login tests", () => {
             }
         );
 
-        it("UI Test 1.2 - sign in api test", () => {
+        it("UI Test 1.2 - /auth/sign signin endpoint test", () => {
                 cy.request('POST', '/auth/sign',
                     {
                         "publicAddress": "0xfc9247de9626f4aad438977fcd0be6d524a00bd9"
@@ -27,7 +27,7 @@ describe("User login tests", () => {
             }
         );
 
-        it("UI Test 1.3 - get logged in user", () => {
+        it("UI Test 1.3 - /auth endpoint test", () => {
                 cy.request('POST', '/auth/sign',
                     {
                         "publicAddress": "0xfc9247de9626f4aad438977fcd0be6d524a00bd9"

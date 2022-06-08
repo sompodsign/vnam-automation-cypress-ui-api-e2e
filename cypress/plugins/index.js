@@ -16,14 +16,6 @@
  * @type {Cypress.PluginConfig}
  */
 module.exports = (on, config) => {
-    on('before:browser:launch', (browser, launchOptions) => {
-        //add an extension from current directory called MetaMask.crx
-        if (browser.family === 'chromium' && browser.name === 'chrome') {
 
-            const path = require('path');
-            const extensionFolder = path.resolve(__dirname, './extensions/MetaMask');
-            launchOptions.extensions.push(extensionFolder)        }
 
-        return launchOptions
-    })
 }

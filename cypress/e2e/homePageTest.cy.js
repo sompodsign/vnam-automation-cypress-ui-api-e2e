@@ -1,7 +1,6 @@
 import HomePage from "../pageObjects/homePage";
 import "cypress-localstorage-commands";
-// import './commands'
-// import 'cypress-extensions'
+import {setToken} from "../fixtures/helpers";
 
 
 describe('User login tests', () => {
@@ -10,15 +9,13 @@ describe('User login tests', () => {
 
     let testData;
 
-
-
-
     beforeEach(() => {
       cy.fixture('login').then(dataJson => {
         testData = dataJson;
       });
       cy.setLocalStorage("isLyceumAuthenticated", true);
     });
+
 
 
     it('UI Test 1.1 - User visits homepage', () => {
@@ -45,5 +42,15 @@ describe('User login tests', () => {
         homePage.checkGameDetailPage();
     });
 
+    it('UI Test 1.7 - Filter games', () => {
+        homePage.clickGenreFilter();
+        homePage.clickGenreFilterOption();
+        homePage.clickBlockChainFilter();
+        homePage.clickBlockChainFilterOption();
+        homePage.clickSinksFilter();
+        homePage.clickSinksFilterOption();
+        cy.contains('Test Game 1').should('be.visible');
+
+    });
 
 })

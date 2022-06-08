@@ -4,8 +4,7 @@
   "description": "Cypress Page Object Basic Model ( Ready To Use ) - UI Test Automation Design Pattern for Cypress.io",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:open": "CYPRESS_REMOTE_DEBUGGING_PORT=9222 cypress open"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -41,12 +40,13 @@
   "license": "MIT",
   "homepage": "https://www.linkedin.com/in/padmarajn/",
   "devDependencies": {
-    "cypress": "^10.0.1",
+    "cypress": "^10.0.3",
     "cypress-browser-extension-plugin": "^0.1.0",
     "cypress-metamask": "^1.0.5-development",
     "cypress-xpath": "^1.6.2"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "cypress-iframe": "^1.0.1",
     "cypress-localstorage-commands": "^2.1.0"
   }

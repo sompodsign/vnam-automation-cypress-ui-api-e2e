@@ -26,4 +26,3 @@ export const clearLocalStorageItem = (key) => {
     cy.clearLocalStorage(key);
 }
 
-

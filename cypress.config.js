@@ -21,7 +21,6 @@ module.exports = defineConfig({
   requestTimeout: 10000,
   responseTimeout: 30000,
   e2e: {
-    baseUrl: 'https://dev.api.nami.gg',
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },

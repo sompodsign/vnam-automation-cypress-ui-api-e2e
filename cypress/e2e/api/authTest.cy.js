@@ -1,17 +1,36 @@
+import "@bahmutov/cy-api"
+
 describe("User login tests", () => {
 
+        let data;
+
+        before(() => {
+            cy.fixture('api-data').then(dataJson => {
+                data = dataJson;
+            });
+        });
+
+
         it("UI Test 1.1 - '/' base api check", () => {
-                cy.request('/').its('headers')
+                cy.request({
+                    url: data.baseApi + "/",
+                }).its('headers')
                     .its('content-type')
                     .should('include', 'text/html')
                     .and('include', 'charset=utf-8');
             }
+
+
         );
 
         it("UI Test 1.2 - /auth/sign signin endpoint test", () => {
-                cy.request('POST', '/auth/sign',
-                    {
-                        "publicAddress": "0xfc9247de9626f4aad438977fcd0be6d524a00bd9"
+                cy.request({
+                        method: "POST",
+                        url: data.baseApi + "/auth/sign/",
+                        body: {
+                            "publicAddress":
+                                data.publicAddress,
+                        }
                     }
                 ).then(response => {
                     expect(response.status).to.eq(201);
@@ -28,14 +47,14 @@ describe("User login tests", () => {
         );
 
         it("UI Test 1.3 - /auth endpoint test", () => {
-                cy.request('POST', '/auth/sign',
+                cy.request('POST', data.baseURL + '/auth/sign',
                     {
-                        "publicAddress": "0xfc9247de9626f4aad438977fcd0be6d524a00bd9"
+                        "publicAddress": data.publicAddress,
                     }
                 ).then(response => {
                         let token = response.body.data.accessToken;
                         cy.request({
-                                url: '/auth', headers: {'Authorization': `Bearer ${token}`}
+                                url: data.baseURL + '/auth', headers: {'Authorization': `Bearer ${token}`}
                             }
                         ).then(response => {
                                 expect(response.status).to.eq(200);

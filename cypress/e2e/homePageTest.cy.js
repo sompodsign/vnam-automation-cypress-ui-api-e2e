@@ -15,11 +15,12 @@ describe('User login tests', () => {
       });
       setCustomLocalStorage("isLyceumAuthenticated", true);
     });
+    
 
 
 
     it('UI Test 1.1 - User visits homepage', () => {
-            HomePage.getHomePage(testData.passPhrase);
+        HomePage.getHomePage(testData.passPhrase);
     })
 
     it('UI Test 1.2 - Nami logo on top left of the page', () => {

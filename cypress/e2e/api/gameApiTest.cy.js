@@ -19,7 +19,7 @@ describe("Game API tests", () => {
             }).then(r => {
                 cy.log(r.body);
                 expect(r.status).to.eq(200);
-                expect(r.duration).to.be.lessThan(1000);
+                expect(r.duration).to.be.lessThan(2000);
                 expect(r.body).to.have.property('data');
                 typeof expect(r.body.data).to.be.an('array');
                 cy.log("duration: ", r.duration);
@@ -37,7 +37,7 @@ describe("Game API tests", () => {
     );
 
 
-    it("UI Test 1.2 - /game/create endpoint test", () => {
+    it("UI Test 1.2 - /game/byId/{id} endpoint test", () => {
         cy.request({
             url: base + "/game/list",
         }).then(r => {
@@ -61,7 +61,7 @@ describe("Game API tests", () => {
                 expect(r.body.data).to.have.property('website');
                 expect(r.body.data).to.have.property('whitepaper');
                 expect(r.body.data).to.have.property('_id');
-                expect(r.duration).to.be.lessThan(1000);
+                expect(r.duration).to.be.lessThan(2000);
                 cy.log("duration: ", r.duration);
                 expect(r.headers).to.have.property('content-type').to.include('application/json');
                 expect(r.headers).to.have.property('access-control-allow-origin').to.eq('*');

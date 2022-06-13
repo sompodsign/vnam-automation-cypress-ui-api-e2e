@@ -47,14 +47,14 @@ describe("User login tests", () => {
         );
 
         it("UI Test 1.3 - /auth endpoint test", () => {
-                cy.request('POST', data.baseURL + '/auth/sign',
+                cy.request('POST', data.baseApi + '/auth/sign',
                     {
                         "publicAddress": data.publicAddress,
                     }
                 ).then(response => {
                         let token = response.body.data.accessToken;
                         cy.request({
-                                url: data.baseURL + '/auth', headers: {'Authorization': `Bearer ${token}`}
+                                url: data.baseApi + '/auth', headers: {'Authorization': `Bearer ${token}`}
                             }
                         ).then(response => {
                                 expect(response.status).to.eq(200);

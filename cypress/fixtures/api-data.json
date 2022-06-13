@@ -1,4 +1,137 @@
-{"baseApi": "https://qa.api.nami.gg",
-  "publicAddress": "0xfc9247de9626f4aad438977fcd0be6d524a00bd9"
+{"baseApi": "https://dev.api.nami.gg",
+  "publicAddress": "0xe74b45ab4e7cf0e19d1338167027aaff478e4df9",
+
+  "newGame": {
+    "name": "unidevGO Test Game",
+    "description": "This is test game",
+    "genres": [
+      "Action",
+      "Adventure",
+      "Arcade",
+      "Art",
+      "Augmented-Reality",
+      "Auto-Battler",
+      "Battle-Royale",
+      "Card",
+      "Casual",
+      "City-Building",
+      "Collectible",
+      "Defi",
+      "Dungeon",
+      "Educational",
+      "E-Sports",
+      "Fantasy",
+      "Fighting",
+      "Horror",
+      "Idle",
+      "Logic",
+      "Minigame",
+      "Mining",
+      "MMO",
+      "MMORPG",
+      "MOBA",
+      "Open-World",
+      "Puzzle",
+      "PvP",
+      "Racing",
+      "RPG",
+      "Sci-Fi",
+      "Shooter",
+      "Simulation",
+      "Social",
+      "Sports",
+      "Strategy",
+      "Tower-Defense"
+    ],
+    "blockchains": [
+      "Avalanche",
+      "Binance",
+      "Bitcoin",
+      "BSV",
+      "Cardano",
+      "Enjin",
+      "EOS",
+      "Ethereum",
+      "Flow",
+      "Gala-Games",
+      "Harmony",
+      "Heco",
+      "Hive",
+      "Immutable-X",
+      "IOST",
+      "KardiaChain",
+      "Litecoin",
+      "OEC",
+      "Other",
+      "Phtasma-Chain",
+      "Polkadot",
+      "Polygon",
+      "Solana",
+      "Steem",
+      "TRON",
+      "VeChain",
+      "Waves",
+      "WAX",
+      "Xaya",
+      "ZENZO"
+    ],
+    "platforms": [
+      "Android",
+      "iOS",
+      "Linux",
+      "Mac",
+      "Windows",
+      "Xbox"
+    ],
+    "status": "Live",
+    "freeToPlay": "true",
+    "socials": [
+      {
+        "network": "Facebook",
+        "link": "https://pt-br.facebook.com/AxieInfinity/"
+      }
+    ],
+    "socialScore": 50,
+    "website": "https://axieinfinity.com/",
+    "whitepaper": "https://axieinfinity.com/",
+    "teamMembers": [
+      {}
+    ],
+    "nftGrowthMethod": [
+      "Breeding"
+    ],
+    "govToken": {
+      "name": "AXS",
+      "id": "axie-infinity"
+    },
+    "utilityToken": {
+      "name": "SLP",
+      "description": "Some description",
+      "id": "smooth-love-potion",
+      "atl": 0,
+      "ath": 0,
+      "staking": true,
+      "contractAddress": "0x0000000000000000000000000000000000000000"
+    },
+    "sinks": [
+      {
+        "name": "Breeding",
+        "purpose": "Minting/Crafting",
+        "inflationary": true,
+        "contractAddress": "0x97a9107c1793bc407d6f527b77e7fff4d812bece"
+      }
+    ],
+    "sinksTags": [
+      "Inflationary",
+      "Deflationary",
+      "None"
+    ],
+    "redFlag": {
+      "one": true,
+      "two": false,
+      "three": true,
+      "four": false
+    }
+  }
 }
 

@@ -1,6 +1,6 @@
 import HomePage from "../pageObjects/homePage";
 import "cypress-localstorage-commands";
-import {setCustomLocalStorage, setToken} from "../fixtures/helpers";
+import {setCustomLocalStorage} from "../fixtures/helpers";
 
 
 describe('User login tests', () => {
@@ -15,7 +15,7 @@ describe('User login tests', () => {
       });
       setCustomLocalStorage("isLyceumAuthenticated", true);
     });
-    
+
 
 
 

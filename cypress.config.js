@@ -25,4 +25,8 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
   },
+    env: {
+        baseApi: 'https://dev.api.nami.gg',
+      adminAddress: '0xe74b45ab4e7cf0e19d1338167027aaff478e4df9',
+    }
 })

@@ -1,30 +1,33 @@
-export class BaseApi {
-    constructor(endpoint, method, body={}) {
-        this.baseUrl = process.env.BASEAPI;
-        this.endpoint = endpoint;
-        this.method = method;
-        this.body = body;
-    }
 
-    url = this.baseUrl + this.endpoint;
+export class Api {
+    constructor(endpoint, body, headers) {
+        this.baseUrl = Cypress.env('baseApi');
+        this.endpoint = endpoint;
+        this.body = body;
+        this.headers = headers;
+    }
 
     get() {
-        cy.request(
+        return cy.request(
             {
-                method: this.method,
-                url: this.url,
-                body: this.body
+                method: "GET",
+                url: this.baseUrl + this.endpoint,
+                body: this.body,
+                headers: this.headers,
             }
-        )
+        );
+
     }
 
-    post = () => {
-        cy.request(
+    post() {
+        return cy.request(
             {
-                method: this.method,
-                url: this.url,
-                body: this.body
+                method: "POST",
+                url: this.baseUrl + this.endpoint,
+                body: this.body,
+                headers: this.headers,
             }
-        )
+        );
     }
+
 }

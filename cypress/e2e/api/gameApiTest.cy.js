@@ -1,4 +1,6 @@
 import "@bahmutov/cy-api"
+import {Api} from "./base-api";
+import {getAdminHeaders, getRandomGameId} from "./utils";
 
 describe("Game API tests", () => {
 
@@ -76,5 +78,25 @@ describe("Game API tests", () => {
         });
     });
 
+    it("UI Test 1.3 - /game/byId/{id}/image endpoint test", () => {
+            getRandomGameId().then(gameId => {
+                    cy.request({
+                        url: `${base}/game/byId/${gameId}/image`,
+                    }).then(r => {
+                            expect(r.status).to.eq(200);
+                        }
+                    );
+                }
+            );
+        }
+    );
 
+    it("UI Test 1.4 - /game/add endpoint test", () => {
+        getAdminHeaders().then(header => {
+            let api = new Api("/game/add", data.newGame, header);
+            api.post().then(r => {
+                expect(r.body.status).to.eq(201);
+            });
+        });
+    });
 });

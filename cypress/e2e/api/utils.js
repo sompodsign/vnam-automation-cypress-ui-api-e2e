@@ -16,7 +16,6 @@ export const getGameList = () => {
             return r.body.data;
         }
     );
-
 }
 
 export const getAdminHeaders = () => {
@@ -26,5 +25,38 @@ export const getAdminHeaders = () => {
             return {"Authorization": "Bearer "+ r.body.data.accessToken};
         }
     );
+}
 
+export const getSinkList = () => {
+    return getAdminHeaders().then(header => {
+            let api = new Api("/sink/list", {}, header);
+            return api.get().then(r => {
+                return r.body.data;
+            });
+        });
+}
+
+export const getRandomSinkId = () => {
+    return getSinkList().then(sinks => {
+        let randomSink = sinks[Math.floor(Math.random() * sinks.length)];
+        return randomSink._id;
+    }
+    );
+}
+
+export const getMemberList = () => {
+    return getAdminHeaders().then(header => {
+            let api = new Api("/member/list", {}, header);
+            return api.get().then(r => {
+                return r.body.data;
+            });
+        });
+}
+
+export const getRandomMemberId = () => {
+    return getMemberList().then(members => {
+        let randomMember = members[Math.floor(Math.random() * members.length)];
+        return randomMember._id;
+    }
+    );
 }

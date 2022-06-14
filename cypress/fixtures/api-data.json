@@ -1,5 +1,23 @@
-{"baseApi": "https://dev.api.nami.gg",
+{"baseApi": "https://qa.api.nami.gg",
   "publicAddress": "0xe74b45ab4e7cf0e19d1338167027aaff478e4df9",
+
+  "newSink": { "name": "Breeding",
+    "purpose": "Minting/Crafting",
+    "inflationary": true,
+    "contractAddress": "0x97a9107c1793bc407d6f527b77e7fff4d812bece"},
+
+  "newMember": {
+    "name": "Jeffrey Zirlin",
+    "role": "Co-Founder & Growth Lead",
+    "doxxed": true,
+    "gameExperience": true,
+    "socials": [
+      {
+        "network": "Facebook",
+        "link": "https://pt-br.facebook.com/AxieInfinity/"
+      }
+    ]
+  },
 
   "newGame": {
     "name": "unidevGO Test Game",

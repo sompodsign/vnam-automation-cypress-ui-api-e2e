@@ -26,7 +26,7 @@ module.exports = defineConfig({
     },
   },
     env: {
-        baseApi: 'https://dev.api.nami.gg',
+        baseApi: 'https://qa.api.nami.gg',
       adminAddress: '0xe74b45ab4e7cf0e19d1338167027aaff478e4df9',
     }
 })

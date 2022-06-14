@@ -30,4 +30,26 @@ export class Api {
         );
     }
 
+    put(body) {
+        return cy.request(
+            {
+                method: "PUT",
+                url: this.baseUrl + this.endpoint,
+                body: body,
+                headers: this.headers,
+            }
+        );
+    }
+
+    delete() {
+        return cy.request(
+            {
+                method: "DELETE",
+                url: this.baseUrl + this.endpoint,
+                body: this.body,
+                headers: this.headers,
+            }
+        );
+    }
+
 }

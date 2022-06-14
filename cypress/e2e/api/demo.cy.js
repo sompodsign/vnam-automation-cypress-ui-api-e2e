@@ -1,10 +1,13 @@
 import {Api} from "./base-api";
-import {getAdminHeaders, getRandomGameId} from "./utils";
+import {getAdminHeaders, getRandomGameId, getRandomSinkId, getSinkList} from "./utils";
 
 describe('demo', function () {
 
     it('should be true', function () {
-        getAdminHeaders().then(r => {
+        getSinkList().then(r => {
+            console.log(r);
+        });
+        getRandomSinkId().then(r => {
             console.log(r);
         });
     });

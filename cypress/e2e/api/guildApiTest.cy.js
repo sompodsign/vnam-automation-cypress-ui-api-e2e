@@ -138,16 +138,17 @@ describe("Gild API tests", () => {
                 getRandomGameId().then(gameId => {
                     let api = new Api(`/guild/byId/${guildId}`, {}, header);
                     api.get().then(r => {
-                        let newName = TestData.getFullName();
+                        let desc = TestData.getDescription();
+                        console.log(desc)
                         let guild = r.body.data;
-                        let newGuild = {...guild, "name": newName};
-                        console.log(guild)
-                        console.log(newGuild);
+                        let newGuild = {...guild, "description": desc};
+                        console.log("original ", guild)
+                        console.log("updated ", newGuild);
 
-                        guildApi.put(guild).then(r => {
+                        guildApi.put(newGuild).then(r => {
                             expect(r.status).to.equal(200);
                             expect(r.body).to.have.property('data');
-                            // expect(r.body.data).to.have.property('name', newName);
+                            expect(r.body.data).to.have.property('description', desc);
 
                             expect(r.duration).to.be.lessThan(2000);
                             expect(r.headers).to.have.property('content-type').to.include('application/json');

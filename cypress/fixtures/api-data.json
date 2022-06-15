@@ -170,6 +170,36 @@
     "currentProducts": "Guild current products",
     "futureProducts": "Guild future products",
     "gamesInvested": [
+      "GAME-ID",
+      "GAME-ID"
+    ],
+    "treasuryWallets": [
+      {
+        "blockchain": "ETHEREUM",
+        "contractAddress": "0x0"
+      }
+    ]
+  },
+  "updatedGuild": {
+    "name": "Carrick Obosa (update2)",
+    "description": "Guild description",
+    "founded": "2022-01-01T00:00:00.000Z",
+    "founders": 2,
+    "location": "Guild location",
+    "teamSize": 3,
+    "orgStructure": "Guild org structure",
+    "aum": "Guild AUM",
+    "largeHoldings": "Guild large holdings",
+    "discordMembers": 200,
+    "scholars": 8,
+    "funding": 100000,
+    "fundingRounds": 2,
+    "leadInvestors": "Guild lead investors",
+    "currentProducts": "Guild current products",
+    "futureProducts": "Guild future products",
+    "gamesInvested": [
+      "GAME_ID",
+      "GAME_ID"
     ],
     "treasuryWallets": [
       {

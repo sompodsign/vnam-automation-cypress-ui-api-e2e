@@ -150,6 +150,33 @@
       "three": true,
       "four": false
     }
+  },
+  "newGuild": {
+    "name": "Lyceum",
+    "description": "Guild description",
+    "founded": "01/01/2022",
+    "founders": 2,
+    "location": "Guild location",
+    "teamSize": 3,
+    "orgStructure": "Guild org structure",
+    "aum": "Guild AUM",
+    "largeHoldings": "Guild large holdings",
+    "discordMembers": 200,
+    "scholars": 8,
+    "funding": 1000,
+    "fundingRounds": 2,
+    "investorCount": 5,
+    "leadInvestors": "Guild lead investors",
+    "currentProducts": "Guild current products",
+    "futureProducts": "Guild future products",
+    "gamesInvested": [
+    ],
+    "treasuryWallets": [
+      {
+        "blockchain": "ETHEREUM",
+        "contractAddress": "0x0"
+      }
+    ]
   }
 }
 

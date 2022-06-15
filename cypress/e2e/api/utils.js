@@ -60,3 +60,20 @@ export const getRandomMemberId = () => {
     }
     );
 }
+
+export const getGuildList = () => {
+    return getAdminHeaders().then(header => {
+            let api = new Api("/guild/list", {}, header);
+            return api.get().then(r => {
+                return r.body.data;
+            });
+        });
+}
+
+export const getRandomGuildId = () => {
+    return getGuildList().then(guilds => {
+        let randomGuild = guilds[Math.floor(Math.random() * guilds.length)];
+        return randomGuild._id;
+        }
+    );
+}

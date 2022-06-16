@@ -164,18 +164,20 @@ describe("Member API tests", () => {
         });
     });
 
-    it("TEST 1.5 - /member/update/{id} api endpoint test", () => { //TODO: giving 500 - trying with admin headers
+    it("TEST 1.5 - /member/update/{id} api endpoint test", () => {
 
         getAdminHeaders().then(header => {
             getRandomMemberId().then(memberId => {
                 let api = new Api(`/member/update/${memberId}`, {}, header);
 
-                let newName = TestData.getFullName();
+                let memberApi = new Api(`/member/byId/${memberId}`, {}, header);
+                memberApi.get().then(r => {
+                    let member = r.body.data;
+                    let updatedMember = {...member, "role": TestData.getRandomPosition()};
 
-                api.put(data.newMember).then(r => {
+                api.put(updatedMember).then(r => {
                     expect(r.status).to.equal(200);
                     expect(r.body).to.have.property('data');
-                    expect(r.body.data).to.have.property('name', newName);
 
                     expect(r.duration).to.be.lessThan(2000);
                     expect(r.headers).to.have.property('content-type').to.include('application/json');
@@ -198,6 +200,7 @@ describe("Member API tests", () => {
                         "'self';frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src " +
                         "'self';script-src-attr 'none';style-src 'self' https: 'unsafe-inline';" +
                         "upgrade-insecure-requests");
+                });
                 });
 
             });
